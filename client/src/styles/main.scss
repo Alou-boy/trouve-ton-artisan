@@ -1,0 +1,137 @@
+@use 'variables' as *;
+
+body {
+  font-family: $police-principale;
+  background-color: $bleu-clair;
+  color: $gris;
+}
+
+.titre-charte {
+  color: $bleu-fonce;
+}
+
+.btn-artisan {
+  background-color: $bleu;
+  color: white;
+  border: none;
+
+  &:hover {
+    background-color: $bleu-fonce;
+    color: white;
+  }
+}
+.etape-numero {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background-color: $bleu;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+// ===== Mise en page (sticky footer) =====
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contenu-principal {
+  flex: 1;
+}
+
+// ===== Header =====
+.navbar {
+  .nav-link {
+    color: $gris;
+    font-weight: 500;
+
+    &:hover {
+      color: $bleu;
+    }
+  }
+}
+
+// ===== Footer =====
+.footer-charte {
+  background-color: $bleu-fonce;
+  color: white;
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: $bleu-clair;
+    }
+  }
+}
+// ===== Hero (bandeau accueil) =====
+.hero {
+  background-color: $bleu;
+  padding: 4rem 1rem;
+}
+
+.hero-titre {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-sous-titre {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+// ===== Cards artisans =====
+.carte-artisan {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.badge-specialite {
+  display: inline-block;
+  background-color: $bleu-clair;
+  color: $bleu-fonce;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+
+.note-artisan {
+  font-weight: 600;
+  color: $gris;
+}
+// ===== Responsive : hero sur mobile =====
+@media (max-width: 768px) {
+  .hero {
+    padding: 2.5rem 1rem;
+  }
+  .hero-titre {
+    font-size: 1.8rem;
+  }
+  .hero-sous-titre {
+    font-size: 1rem;
+  }
+}
+
+// ===== Focus visible (accessibilité clavier) =====
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid $bleu;
+  outline-offset: 2px;
+}
