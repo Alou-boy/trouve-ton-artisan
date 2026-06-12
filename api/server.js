@@ -4,6 +4,7 @@ require('dotenv').config();
 const { sequelize, Artisan } = require('./models');  // <- charge les modeles + associations
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const path = require('path');
 
 const app = express();
 app.use(helmet());
@@ -17,7 +18,7 @@ const limiter = rateLimit({
   message: 'Trop de requêtes, réessayez plus tard.',
 });
 app.use(limiter);
-
+app.use(express.static(path.join(__dirname, '../client/dist')));
 app.get('/', (req, res) => {
   res.json({ message: 'API Trouve ton artisan operationnelle !' });
 });
@@ -34,6 +35,10 @@ sequelize.authenticate()
     console.log('Connexion a la BDD reussie !');
     const nb = await Artisan.count();           // test des modeles
     console.log(`${nb} artisans dans la base`);
+    // === Catch-all : toute route non-API renvoie le front React ===
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+});
 
     const PORT = process.env.PORT || 3001;
    const HOST = process.env.HOST || process.env.IP || 'localhost';

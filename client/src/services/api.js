@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Instance axios qui pointe vers notre API Express
 const api = axios.create({
-  baseURL: 'http://localhost:3001/api',
+  baseURL: import.meta.env.DEV ? 'http://localhost:3001/api' : '/api',
 });
 
 // ===== CATEGORIES =====
