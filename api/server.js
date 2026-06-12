@@ -34,8 +34,9 @@ sequelize.authenticate()
     console.log('Connexion a la BDD reussie !');
     const nb = await Artisan.count();           // test des modeles
     console.log(`${nb} artisans dans la base`);
+
     const PORT = process.env.PORT || 3001;
-const HOST = process.env.HOST || 'localhost';
+   const HOST = process.env.HOST || process.env.IP || 'localhost';
 
 app.listen(PORT, HOST, () => {
   console.log(`Serveur lance sur ${HOST}:${PORT}`);
