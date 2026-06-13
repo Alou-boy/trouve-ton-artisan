@@ -21,7 +21,7 @@
     "express-rate-limit": "^8.5.2",
     "helmet": "^8.2.0",
     "mysql2": "^3.22.4",
-    "nodemailer": "^8.0.10",
+    "nodemailer": "^8.0.11",
     "react-router-dom": "^7.16.0",
     "sass": "^1.100.0",
     "sequelize": "^6.37.8"
