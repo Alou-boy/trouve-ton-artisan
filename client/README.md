@@ -95,8 +95,8 @@ DB_PASSWORD=ton_mot_de_passe
 CLIENT_URL=http://localhost:5173
 MAIL_HOST=sandbox.smtp.mailtrap.io
 MAIL_PORT=2525
-MAIL_USER=ton_user_mailtrap
-MAIL_PASS=ton_pass_mailtrap
+MAIL_USER=b8c44b87e6c15d
+MAIL_PASS=06585c49116bbf
 ```
 
 Lancer l'API :
@@ -143,7 +143,7 @@ L'application est accessible sur `http://localhost:5173`.
 
 ## 🔗 Liens
 
-- 🌐 Site en ligne : 
+- 🌐 Site en ligne : https://alou.alwaysdata.net/
 - 🎨 Maquettes Figma : 
 https://www.figma.com/design/iovbTLO8cGuDzDGBxzdDZH/Trouve-ton-artisan?node-id=0-1&p=f&t=HWQV4RJG1nTXHglt-0
 ---
